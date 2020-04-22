@@ -55,7 +55,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="SpotEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SpotContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cart" EntityType="Self.Cart" />
           <EntitySet Name="Customer" EntityType="Self.Customer" />
           <EntitySet Name="Products" EntityType="Self.Products" />
@@ -65,7 +65,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SpotModelStoreContainer" CdmEntityContainer="SpotEntities">
+        <EntityContainerMapping StorageEntityContainer="SpotModelStoreContainer" CdmEntityContainer="SpotContext">
           <EntitySetMapping Name="Cart">
             <EntityTypeMapping TypeName="SpotModel.Cart">
               <MappingFragment StoreEntitySet="Cart">

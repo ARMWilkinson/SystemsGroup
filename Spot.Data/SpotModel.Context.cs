@@ -13,10 +13,10 @@ namespace Spot.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SpotEntities : DbContext
+    public partial class SpotContext : DbContext
     {
-        public SpotEntities()
-            : base("name=SpotEntities")
+        public SpotContext()
+            : base("name=SpotContext")
         {
         }
     

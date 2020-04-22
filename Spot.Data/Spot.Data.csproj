@@ -56,6 +56,8 @@
     <Compile Include="Customer.cs">
       <DependentUpon>SpotModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="IDAO\IProductsDAO.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>SpotModel.tt</DependentUpon>
     </Compile>
@@ -77,33 +79,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="IDAO\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="SpotModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SpotModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
-    <None Include="SpotModel.edmx.diagram">
-      <DependentUpon>SpotModel.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="SpotModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SpotModel.Context.cs</LastGenOutput>
       <DependentUpon>SpotModel.edmx</DependentUpon>
+      <LastGenOutput>SpotModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="SpotModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SpotModel.edmx</DependentUpon>
       <LastGenOutput>SpotModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="SpotModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpotModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SpotModel.edmx.diagram">
+      <DependentUpon>SpotModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
