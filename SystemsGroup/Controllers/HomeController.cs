@@ -17,7 +17,8 @@ namespace SystemsGroup.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            IList<Products> productsList = _context.Products.ToList();
+            return View(productsList);
         }
 
         public ActionResult About()
