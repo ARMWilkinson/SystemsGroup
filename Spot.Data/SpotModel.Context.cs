@@ -13,6 +13,7 @@ namespace Spot.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
+    
     public partial class SpotContext : DbContext
     {
         public SpotContext()
@@ -28,5 +29,7 @@ namespace Spot.Data
         public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+
+        public System.Data.Entity.DbSet<SystemsGroup.Models.CartProduct> CartProducts { get; set; }
     }
 }
