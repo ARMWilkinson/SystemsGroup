@@ -10,5 +10,7 @@ namespace Spot.Services.IService
     public interface IProductsService
     {
         IList<Products> GetProducts();
+
+        Products GetProduct(int id);
     }
 }

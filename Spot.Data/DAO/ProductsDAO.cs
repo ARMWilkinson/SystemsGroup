@@ -21,5 +21,10 @@ namespace Spot.Data.DAO
             return _context.Products.ToList();
         }
 
+        public Products GetProduct(int id)
+        {
+            return _context.Products.Find(id);
+        }
+
     }
 }

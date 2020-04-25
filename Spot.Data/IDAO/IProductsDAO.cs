@@ -9,5 +9,7 @@ namespace Spot.Data.IDAO
     public interface IProductsDAO
     {
         IList<Products> GetProducts();
+
+        Products GetProduct(int id);
     }
 }
