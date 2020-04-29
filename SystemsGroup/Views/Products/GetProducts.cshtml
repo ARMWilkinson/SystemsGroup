@@ -48,6 +48,7 @@
         @Html.DisplayFor(modelItem => item.PartNumber)
     </td>
     <td>
+        @Html.ActionLink("Add To Cart", "AddToCart", new { id = item.Id, Controller = "Cart" }) |
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
         @Html.ActionLink("Details", "GetProduct", new { id = item.Id }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.Id })

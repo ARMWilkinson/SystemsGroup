@@ -45,7 +45,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Add To Cart", "AddToCart", new { id = Model.Id }) |
+    @Html.ActionLink("Add To Cart", "AddToCart", new { id = Model.Id, Controller = "Cart" }) |
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "GetProducts")
 </p>

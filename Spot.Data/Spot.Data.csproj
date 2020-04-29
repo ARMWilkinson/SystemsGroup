@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="DAO\ProductsDAO.cs" />
     <Compile Include="IDAO\IProductsDAO.cs" />
+    <Compile Include="Models\CartProduct.cs" />
     <Compile Include="Products.cs">
       <DependentUpon>SpotModel.tt</DependentUpon>
     </Compile>

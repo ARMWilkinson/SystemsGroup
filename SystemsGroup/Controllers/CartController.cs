@@ -1,11 +1,16 @@
-﻿using System;
+﻿using Spot.Services.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SystemsGroup.Models;
 using Spot.Data;
-using Spot.Services.Models;
+using Spot.Services;
+using Spot.Data.DAO;
+using Spot.Data.IDAO;
+using Spot.Services.IService;
+using Spot.Services.Service;
+using System.Runtime.InteropServices;
 
 namespace SystemsGroup.Controllers
 {
@@ -14,41 +19,47 @@ namespace SystemsGroup.Controllers
         public List<CartProduct> cart;
         private Spot.Services.IService.IProductsService _productService;
 
-        // GET: Cart
         public ActionResult AddToCart(int id)
         {
             CartProduct cartItem = new CartProduct();
-            Products product = _productService.GetProduct(id);
+            _productService = new ProductsService();
+            Products products = _productService.GetProduct(id);
             cartItem.Quantity = 1;
-            cartItem.Id = product.Id;
-            cartItem.Name = product.Name;
-            cartItem.Description = product.Description;
-            cartItem.Price = product.Price;
-            cartItem.PartNumber = product.PartNumber;
-            List<Products> li = new List<Products>();
+            cartItem.Id = products.Id;
+            cartItem.Name = products.Name;
+            cartItem.PartNumber = products.PartNumber;
+            cartItem.Price = products.Price;
             if (Session["cart"] == null)
             {
-                li.Add(cartItem);
-                Session["cart"] = li;
-                ViewBag.cart = li.Count();
-                Session["count"] = 1;
+                List<CartProduct> cart = new List<CartProduct>();
+                cart.Add(cartItem);
+                Session["cart"] = cart;
             }
             else
             {
                 var cart = (List<CartProduct>)Session["cart"];
-                li.Add(cartItem);
-                Session["cart"] = li;
-                ViewBag.cart = li.Count();
+                cart.Add(cartItem);
                 Session["cart"] = cart;
             }
             return RedirectToAction("DisplayCart");
         }
 
-        
         public ActionResult DisplayCart()
         {
             var cart = (List<CartProduct>)Session["cart"];
-            return View("DisplayCart");
+            return View("DisplayCart", cart);
+        }
+
+        // GET: Cart
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: Cart/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
         }
 
         // GET: Cart/Create

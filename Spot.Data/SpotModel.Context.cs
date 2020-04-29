@@ -30,6 +30,6 @@ namespace Spot.Data
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Products> Products { get; set; }
 
-        public System.Data.Entity.DbSet<SystemsGroup.Models.CartProduct> CartProducts { get; set; }
+        public System.Data.Entity.DbSet<Spot.Data.Models.CartProduct> CartProducts { get; set; }
     }
 }
