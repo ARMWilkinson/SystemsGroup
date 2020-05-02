@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,6 +192,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\s2syellow.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -241,6 +243,11 @@
     <Content Include="Views\Products\GetProducts.cshtml" />
     <Content Include="Views\Products\GetProduct.cshtml" />
     <Content Include="Views\Cart\DisplayCart.cshtml" />
+    <Content Include="Views\Registration\Create.cshtml" />
+    <Content Include="Views\Registration\Delete.cshtml" />
+    <Content Include="Views\Registration\Details.cshtml" />
+    <Content Include="Views\Registration\Edit.cshtml" />
+    <Content Include="Views\Registration\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,7 +15,10 @@ namespace Spot.Data
     public partial class Cart
     {
         public int CartId { get; set; }
-        public Nullable<decimal> Count { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
+        public decimal Count { get; set; }
+        public System.DateTime DateCreated { get; set; }
+        public Nullable<int> ProductId { get; set; }
+    
+        public virtual Products Products { get; set; }
     }
 }

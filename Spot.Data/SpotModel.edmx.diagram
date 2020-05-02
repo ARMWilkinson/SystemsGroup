@@ -6,8 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c11a78169a3646eda4b1955eef51cdae" Name="Diagram1">
         <EntityTypeShape EntityType="SpotModel.Cart" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SpotModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpotModel.Customer" Width="1.5" PointX="4.875" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SpotModel.Products" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="SpotModel.FK__Cart__ProductId__5EBF139D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
