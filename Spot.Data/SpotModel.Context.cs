@@ -26,7 +26,7 @@ namespace Spot.Data
         }
     
         public virtual DbSet<Cart> Cart { get; set; }
-        public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
     }
 }
