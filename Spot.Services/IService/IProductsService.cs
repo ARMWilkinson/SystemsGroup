@@ -12,5 +12,7 @@ namespace Spot.Services.IService
         IList<Products> GetProducts();
 
         Products GetProduct(int id);
+
+        void UpdateProduct(Products product);
     }
 }

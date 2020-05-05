@@ -29,5 +29,10 @@ namespace Spot.Services.Service
         {
             return _dao.GetProduct(id);
         }
+
+        public void UpdateProduct(Products product)
+        {
+            _dao.GetProduct(product.Id);
+        }
     }
 }
