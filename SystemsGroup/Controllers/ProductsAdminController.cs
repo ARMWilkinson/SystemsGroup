@@ -29,13 +29,20 @@ namespace SystemsGroup.Controllers
         [HttpPost]
         public ActionResult UpdateProduct(int Id, Products product)
         {
+            try
+            {
+                _productsService.UpdateProduct(product);
 
-            product = _productsService.GetProduct(Id);
-            return RedirectToAction("GetProducts");
+                return RedirectToAction("GetProducts", "Products");
+            }
+            catch
+            {
+                return View("Index");
+            }
         }
 
-        // GET: ProductsAdmin/Details/5
-        public ActionResult Details(int id)
+// GET: ProductsAdmin/Details/5
+public ActionResult Details(int id)
         {
             return View();
         }

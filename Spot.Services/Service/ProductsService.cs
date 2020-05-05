@@ -13,7 +13,7 @@ namespace Spot.Services.Service
 {
     public class ProductsService : IProductsService
     {
-        private IProductsDAO _dao;
+        private ProductsDAO _dao;
         
         public ProductsService()
         {
@@ -32,7 +32,7 @@ namespace Spot.Services.Service
 
         public void UpdateProduct(Products product)
         {
-            _dao.GetProduct(product.Id);
+            _dao.UpdateProduct(product);
         }
     }
 }
