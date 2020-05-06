@@ -30,7 +30,7 @@ namespace SystemsGroup.Models
             return new ApplicationDbContext();
         }
 
-        
+        public DbSet<ApplicationUser> applicationUser { get; set; }
     }
 
     
