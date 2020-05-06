@@ -42,5 +42,11 @@ namespace Spot.Data.DAO
             _context.SaveChanges();
         }
 
+        public void AddProduct(Products product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+        }
+
     }
 }

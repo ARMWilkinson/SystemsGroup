@@ -39,5 +39,10 @@ namespace Spot.Services.Service
         {
             _dao.DeleteProduct(product);
         }
+
+        public void AddProduct(Products product)
+        {
+            _dao.AddProduct(product);
+        }
     }
 }

@@ -16,5 +16,7 @@ namespace Spot.Services.IService
         void UpdateProduct(Products product);
 
         void DeleteProduct(Products product);
+
+        void AddProduct(Products product);
     }
 }

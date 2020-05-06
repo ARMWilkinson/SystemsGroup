@@ -19,7 +19,6 @@ namespace SystemsGroup.Controllers
         {
             _productsService = new ProductsService();
         }
-        // GET: ProductsAdmin
         [HttpGet]
         public ActionResult UpdateProduct(int Id)
         {
@@ -62,75 +61,23 @@ namespace SystemsGroup.Controllers
             }
         }
 
-// GET: ProductsAdmin/Details/5
-public ActionResult Details(int id)
+        [HttpGet]
+        public ActionResult AddProduct(int Id)
         {
-            return View();
+            return View(_productsService.GetProduct(Id));
         }
 
-        // GET: ProductsAdmin/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ProductsAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult AddProduct(int Id, Products product)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                _productsService.AddProduct(product);
+                return RedirectToAction("GetProducts", "Products");
             }
             catch
             {
-                return View();
-            }
-        }
-
-        // GET: ProductsAdmin/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ProductsAdmin/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ProductsAdmin/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ProductsAdmin/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+                return View("GetProducts", "Products");
             }
         }
     }

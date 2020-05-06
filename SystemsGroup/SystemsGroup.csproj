@@ -195,6 +195,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\s2syellow.png" />
+    <Content Include="img\s2syellowbigdot.png" />
+    <Content Include="img\s2syellowbigdotinvert.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -253,6 +255,7 @@
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Views\ProductsAdmin\UpdateProduct.cshtml" />
     <Content Include="Views\ProductsAdmin\DeleteProduct.cshtml" />
+    <Content Include="Views\ProductsAdmin\AddProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
