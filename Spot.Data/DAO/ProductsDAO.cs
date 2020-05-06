@@ -36,5 +36,11 @@ namespace Spot.Data.DAO
             _context.SaveChanges();
         }
 
+        public void DeleteProduct(Products product)
+        {
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+        }
+
     }
 }

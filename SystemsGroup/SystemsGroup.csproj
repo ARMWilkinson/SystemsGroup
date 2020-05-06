@@ -252,6 +252,7 @@
     <Content Include="Views\Registration\Register.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Views\ProductsAdmin\UpdateProduct.cshtml" />
+    <Content Include="Views\ProductsAdmin\DeleteProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

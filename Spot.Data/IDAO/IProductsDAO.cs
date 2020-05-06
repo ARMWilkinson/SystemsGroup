@@ -14,6 +14,7 @@ namespace Spot.Data.IDAO
 
         void UpdateProduct(Products product);
 
+        void DeleteProduct(Products product);
     }
 
 }

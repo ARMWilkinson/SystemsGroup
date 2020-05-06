@@ -41,6 +41,27 @@ namespace SystemsGroup.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult DeleteProduct(int Id)
+        {
+            return View(_productsService.GetProduct(Id));
+        }
+
+        [HttpPost]
+        public ActionResult DeleteProduct(int Id, Products product)
+        {
+            try
+            {
+                Products deleteProduct = _productsService.GetProduct(Id);
+                _productsService.DeleteProduct(deleteProduct);
+                return RedirectToAction("GetProducts", "Products");
+            }
+            catch
+            {
+                return View("GetProducts", "Products");
+            }
+        }
+
 // GET: ProductsAdmin/Details/5
 public ActionResult Details(int id)
         {
