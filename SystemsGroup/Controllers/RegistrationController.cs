@@ -136,5 +136,42 @@ namespace SystemsGroup.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Customer customer)
+        {
+            // this action is for handle post (login)
+            if (ModelState.IsValid) // this is check validity
+            {
+                using (SpotContext dc = new SpotContext())
+                {
+                    var v = dc.Customer.Where(a => a.EmailAddress.Equals(customer.EmailAddress) && a.Password.Equals(customer.Password)).FirstOrDefault();
+                    if (v != null)
+                    {
+                        Session["LoggedUserID"] = v.Id.ToString();
+                        Session["LoggedUserFullname"] = v.EmailAddress.ToString();
+                        return RedirectToAction("AfterLogin");
+                    }
+                }
+            }
+            return View(customer);
+        }
+        public ActionResult AfterLogin()
+        {
+            if (Session["LoggedUserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

@@ -1,0 +1,13 @@
+﻿@model Spot.Data.Customer
+
+@{
+    ViewBag.Title = "AfterLogin";
+}
+
+<h2>After Login</h2>
+@if (Session["LoggedUserFullname"] != null)
+{
+    <text>
+        Welcome @Session["LoggedUserFullname"].ToString()
+    </text>
+}
