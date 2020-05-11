@@ -10,7 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-    margin: 0;
+    margin: 60px;
 }
 article,
 aside,
@@ -18,7 +18,9 @@ details,
 figcaption,
 figure,
 footer,
-header,
+header{
+    text-align: center;
+}
 hgroup,
 main,
 menu,
@@ -188,6 +190,7 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  background-color: yellow;
 }
 td,
 th {
@@ -255,10 +258,11 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+    background-color: yellow;
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: yellow;
   }
   .table-bordered th,
   .table-bordered td {
@@ -1146,7 +1150,7 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eeeeee;
@@ -2351,7 +2355,7 @@ pre code {
   }
 }
 table {
-  background-color: transparent;
+  background-color: yellow;
 }
 table col[class*="col-"] {
   position: static;
