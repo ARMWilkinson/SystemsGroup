@@ -156,13 +156,13 @@ namespace SystemsGroup.Controllers
                     {
                         Session["LoggedUserID"] = v.Id.ToString();
                         Session["LoggedUserFullname"] = v.EmailAddress.ToString();
-                        return RedirectToAction("AfterLogin");
+                        return RedirectToAction("Welcome");
                     }
                 }
             }
             return View(customer);
         }
-        public ActionResult AfterLogin()
+        public ActionResult Welcome()
         {
             if (Session["LoggedUserID"] != null)
             {
