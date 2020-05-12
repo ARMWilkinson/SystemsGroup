@@ -4,18 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Spot.Data;
-using Spot.Services;
 using Spot.Services.IService;
 using Spot.Services.Service;
-using System.Collections;
+using Spot.Services.Models;
+using Spot.Data.DAO;
+using Spot.Data.IDAO;
+using Spot.Data.Models;
 
 namespace SystemsGroup.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomersController : Controller
     {
         private ICustomerService _service;
 
-        public CustomerController()
+        public CustomersController()
         {
             _service = new CustomerService();
         }
@@ -25,25 +27,31 @@ namespace SystemsGroup.Controllers
             IList<Customer> list = _service.GetCustomers();
             return View("GetCustomers", list);
         }
-        // GET: Customer
+
+        public ActionResult GetCustomer(int id)
+        {
+            Customer customer = _service.GetCustomer(id);
+            return View("GetCustomer", customer);
+        }
+        // GET: Customers
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Customer/Details/5
+        // GET: Customers/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Customer/Create
+        // GET: Customers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Customer/Create
+        // POST: Customers/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -59,13 +67,13 @@ namespace SystemsGroup.Controllers
             }
         }
 
-        // GET: Customer/Edit/5
+        // GET: Customers/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Customer/Edit/5
+        // POST: Customers/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +89,13 @@ namespace SystemsGroup.Controllers
             }
         }
 
-        // GET: Customer/Delete/5
+        // GET: Customers/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Customer/Delete/5
+        // POST: Customers/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

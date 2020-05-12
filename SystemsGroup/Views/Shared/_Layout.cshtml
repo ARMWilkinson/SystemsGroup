@@ -29,9 +29,22 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Products", "GetProducts", new { Controller = "Products" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Account", "GetCustomers", new { Controller = "Customer" })</li>
+                    @if (Session["LoggedUserID"] != null)
+                    {
+                        <li>@Html.ActionLink("Account", "GetCustomer", new { id = Session["loggedUserID"], Controller = "Customers" })</li>
+                    }
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Session["LoggedUserID"] == null)
+                    {
+                        <li>@Html.ActionLink("Log In", "Login", new { Controller = "Registration" })</li>
+                        <li>@Html.ActionLink("Register", "Register", new { Controller = "Registration" })</li>
+                    }
+                    @if (Session["LoggedUserID"] != null)
+                    {
+                        <li>@Html.ActionLink("Log Out", "Logout", new { Controller = "Registration" })</li>
+                    }
+                </ul>
             </div>
         </div>
     </div>
