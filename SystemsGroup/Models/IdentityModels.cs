@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SystemsGroup.Controllers;
 
 namespace SystemsGroup.Models
 {
@@ -29,6 +30,12 @@ namespace SystemsGroup.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet <CartController> cartControllers { get; set; }
+      
+
+        
+
 
         
     }
