@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Spot.Data;
 using Spot.Data.Models;
 
@@ -156,13 +157,13 @@ namespace SystemsGroup.Controllers
                     {
                         Session["LoggedUserID"] = v.Id.ToString();
                         Session["LoggedUserFullname"] = v.EmailAddress.ToString();
-                        return RedirectToAction("AfterLogin");
+                        return RedirectToAction("Welcome");
                     }
                 }
             }
             return View(customer);
         }
-        public ActionResult AfterLogin()
+        public ActionResult Welcome()
         {
             if (Session["LoggedUserID"] != null)
             {
@@ -172,6 +173,13 @@ namespace SystemsGroup.Controllers
             {
                 return RedirectToAction("Index");
             }
+        }
+
+        public ActionResult Logout()
+        {
+            Session["loggedUserID"] = null;
+            Session["loggedUserFullName"] = null;
+            return RedirectToAction("Index", "Home");
         }
     }
 }
