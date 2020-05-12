@@ -9,6 +9,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SystemsGroup.Models;
+using Spot.Data;
+using Spot.Services;
+using Spot.Services.IService;
+using Spot.Services.Service;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace SystemsGroup.Controllers
 {
@@ -18,8 +24,17 @@ namespace SystemsGroup.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        private ICustomerService _service;
+
         public AccountController()
         {
+            _service = new CustomerService();
+        }
+
+        public ActionResult GetCustomers()
+        {
+            IList<Customer> list = _service.GetCustomers();
+            return View("GetCustomers", list);
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
