@@ -35,6 +35,10 @@
                     }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    @if (Session["cart"] != null)
+                    {
+                        <li> @Html.ActionLink("View Cart", "DisplayCart", new { Controller = "Cart" }) </li>
+                    }
                     @if (Session["LoggedUserID"] == null)
                     {
                         <li>@Html.ActionLink("Log In", "Login", new { Controller = "Registration" })</li>

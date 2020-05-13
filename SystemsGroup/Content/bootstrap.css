@@ -1091,7 +1091,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333333;
+    color: yellow;
     background-color: #434343;
 }
 input,
@@ -1447,16 +1447,20 @@ ol ol {
 dl {
   margin-top: 0;
   margin-bottom: 20px;
+  color: yellow;
 }
 dt,
 dd {
   line-height: 1.42857143;
+  color: yellow;
 }
 dt {
   font-weight: 700;
+  color: yellow;
 }
 dd {
   margin-left: 0;
+  color: yellow;
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -1467,9 +1471,11 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: yellow;
   }
   .dl-horizontal dd {
     margin-left: 180px;
+    color: yellow;
   }
 }
 abbr[title],
