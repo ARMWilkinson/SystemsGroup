@@ -12,5 +12,7 @@ namespace Spot.Services.IService
         IList<Customer> GetCustomers();
 
         Customer GetCustomer(int id);
+        void UpdateCustomer(Customer customer);
+        void DeleteCustomer(Customer customer);
     }
 }
