@@ -29,5 +29,13 @@ namespace Spot.Services.Service
         {
             return _dao.GetCustomer(id);
         }
+        public void UpdateCustomer(Customer customer)
+        {
+            _dao.UpdateCustomer(customer);
+        }
+        public void DeleteCustomer(Customer customer)
+        {
+            _dao.DeleteCustomer(customer);
+        }
     }
 }

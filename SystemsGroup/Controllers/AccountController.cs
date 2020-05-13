@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Spot.Data;
 using SystemsGroup.Models;
 using Spot.Data;
 using Spot.Services;
@@ -18,6 +20,7 @@ using System.Collections.Generic;
 
 namespace SystemsGroup.Controllers
 {
+   
     [Authorize]
     public class AccountController : Controller
     {
@@ -153,6 +156,7 @@ namespace SystemsGroup.Controllers
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
+
         {
             return View();
         }
@@ -164,14 +168,24 @@ namespace SystemsGroup.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+
             if (ModelState.IsValid)
             {
+               
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+               
                 if (result.Succeeded)
                 {
-                    
-                   
+                    var db = new SpotContext();
+                    // note the change
+                    db.Entry(user).State = EntityState.Modified;
+                  
+                    db.SaveChanges();
+
+                    //var db = new SpotContext();
+                    //db.Users.Add(user);
+                    //db.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     

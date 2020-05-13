@@ -11,5 +11,7 @@ namespace Spot.Data.IDAO
         IList<Customer> GetCustomers();
 
         Customer GetCustomer(int id);
+        void UpdateCustomer(Customer customer);
+        void DeleteCustomer(Customer customer);
     }
 }
