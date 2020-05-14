@@ -168,9 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsAdminController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +196,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\s2syellow.png" />
+    <Content Include="img\s2syellowbigdot.png" />
+    <Content Include="img\s2syellowbigdotinvert.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -249,6 +253,10 @@
     <Content Include="Views\Registration\Details.cshtml" />
     <Content Include="Views\Registration\Edit.cshtml" />
     <Content Include="Views\Registration\Register.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\ProductsAdmin\UpdateProduct.cshtml" />
+    <Content Include="Views\ProductsAdmin\DeleteProduct.cshtml" />
+    <Content Include="Views\ProductsAdmin\AddProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

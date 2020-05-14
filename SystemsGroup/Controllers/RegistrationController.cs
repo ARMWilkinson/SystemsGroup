@@ -135,30 +135,5 @@ namespace SystemsGroup.Controllers
             }
             base.Dispose(disposing);
         }
-
-        //Login
-        public ActionResult Login()
-        {
-            return View();
-        }
-        public ActionResult Login(Customer customer)
-        {
-            using (SpotContext db = new SpotContext())
-            {
-                var user = db.Customer.Single(u => u.EmailAddress == customer.EmailAddress && u.Password == customer.Password);
-                if (user != null)
-                {
-                    Session["UserID"] = user.EmailAddress.ToString();
-                    Session["Useraname"] = user.LastName.ToString();
-                    return RedirectToAction("index");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "EmailAddress or Password is wrong.");
-                }
-            }
-            return View();
-        }
-        
     }
 }

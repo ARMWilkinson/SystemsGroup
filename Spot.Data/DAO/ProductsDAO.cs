@@ -26,5 +26,27 @@ namespace Spot.Data.DAO
             return _context.Products.Find(id);
         }
 
+        public void UpdateProduct(Products product)
+        {
+            Products _product = GetProduct(product.Id);
+            _product.Name = product.Name;
+            _product.Description = product.Description;
+            _product.Price = product.Price;
+            _product.PartNumber = product.PartNumber;
+            _context.SaveChanges();
+        }
+
+        public void DeleteProduct(Products product)
+        {
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+        }
+
+        public void AddProduct(Products product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+        }
+
     }
 }

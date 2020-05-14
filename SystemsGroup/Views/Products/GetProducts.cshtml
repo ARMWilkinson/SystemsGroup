@@ -7,7 +7,7 @@
 <h2>GetProducts</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "AddProduct", "Create")
 </p>
 <table class="table">
     <tr>
@@ -49,9 +49,10 @@
     </td>
     <td>
         @Html.ActionLink("Add To Cart", "AddToCart", new { id = item.Id, Controller = "Cart" }) |
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Edit", "UpdateProduct", new { id = item.Id, Controller = "ProductsAdmin" }) |
         @Html.ActionLink("Details", "GetProduct", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        @Html.ActionLink("Delete", "DeleteProduct", new { id = item.Id, Controller = "ProductsAdmin" }) |
+        @Html.ActionLink("Create New Product", "AddProduct", new { id = item.Id, Controller = "ProductsAdmin" })
     </td>
 </tr>
 }
