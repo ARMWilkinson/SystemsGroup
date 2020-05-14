@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Spot.Data;
 
 namespace SystemsGroup.Models
 {
@@ -18,19 +19,16 @@ namespace SystemsGroup.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class SpotContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public SpotContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+           
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        
 
-        public DbSet<ApplicationUser> applicationUser { get; set; }
     }
 
     

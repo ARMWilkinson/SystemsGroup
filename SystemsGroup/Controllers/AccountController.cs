@@ -155,8 +155,16 @@ namespace SystemsGroup.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    var db = new SpotContext();
                     
-                   
+                    db.SaveChanges();
+
+
+                    //SpotContext db = new SpotContext();
+                    //db.Customer.Add(obj);
+                    //db.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     

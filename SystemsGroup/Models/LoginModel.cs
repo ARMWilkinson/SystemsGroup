@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -21,5 +22,10 @@ namespace SystemsGroup.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public class  LoginModolContext : DbContext
+        {
+            public DbSet<LoginModel> loginModel { get; set; }
+        }
     }
 }
