@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CustomersAdminController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -202,9 +203,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\cover4.jpg" />
-    <Content Include="img\s2syellow.png" />
-    <Content Include="img\s2syellowbigdot.png" />
-    <Content Include="img\s2syellowbigdotinvert.png" />
+    <Content Include="images\s2syellow.png" />
+    <Content Include="images\s2syellowbigdot.png" />
+    <Content Include="images\s2syellowbigdotinvert.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fa-brands-400.eot" />
@@ -280,8 +281,8 @@
     <Content Include="Views\Registration\Welcome.cshtml" />
     <Content Include="Views\Customers\GetCustomers.cshtml" />
     <Content Include="Views\Customers\GetCustomer.cshtml" />
-    <Content Include="Views\Admin\AddRole.cshtml" />
-    <Content Include="Views\Admin\GetUsers.cshtml" />
+    <Content Include="Views\CustomersAdmin\UpdateCustomer.cshtml" />
+    <Content Include="Views\CustomersAdmin\DeleteCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

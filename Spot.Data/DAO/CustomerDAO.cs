@@ -25,5 +25,21 @@ namespace Spot.Data.DAO
         {
             return _context.Customer.Find(id);
         }
+        public void UpdateCustomer(Customer customer)
+        {
+                Customer _customer = GetCustomer(customer.Id);
+                _customer.FirstName = customer.FirstName;
+                _customer.LastName = customer.LastName;
+                _customer.EmailAddress = customer.EmailAddress;
+                _customer.Password = customer.Password;
+                _customer.PhoneNumber = customer.PhoneNumber;
+
+                _context.SaveChanges();
+        }
+        public void DeleteCustomer(Customer customer)
+        {
+            _context.Customer.Remove(customer);
+            _context.SaveChanges();
+        }
     }
 }
