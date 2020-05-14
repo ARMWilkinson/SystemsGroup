@@ -11,7 +11,6 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Spot.Data;
 using SystemsGroup.Models;
-using Spot.Data;
 using Spot.Services;
 using Spot.Services.IService;
 using Spot.Services.Service;

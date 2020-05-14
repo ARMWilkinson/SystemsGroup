@@ -267,6 +267,7 @@ th {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    border-color: transparent;
   }
 }
 @font-face {

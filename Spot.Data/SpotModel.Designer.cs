@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\delir\Source\Repos\ARMWilkinson\SystemsGroup\Spot.Data\SpotModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\delir\source\repos\ARMWilkinson\SystemsGroup\Spot.Data\SpotModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
