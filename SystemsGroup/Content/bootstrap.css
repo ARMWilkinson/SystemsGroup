@@ -10,7 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-    margin: 60px;
+    margin: 100px;
 }
 article,
 aside,
@@ -267,6 +267,7 @@ th {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    border-color: transparent;
   }
 }
 @font-face {
@@ -1091,7 +1092,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: yellow;
+    color: black;
     background-color: #434343;
 }
 input,
@@ -1447,7 +1448,7 @@ ol ol {
 dl {
   margin-top: 0;
   margin-bottom: 20px;
-  color: yellow;
+  background-color: yellow;
 }
 dt,
 dd {
@@ -1456,11 +1457,11 @@ dd {
 }
 dt {
   font-weight: 700;
-  color: yellow;
+  background-color: yellow;
 }
 dd {
   margin-left: 0;
-  color: yellow;
+  background-color: yellow;
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -1471,11 +1472,11 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: yellow;
+    background-color: yellow;
   }
   .dl-horizontal dd {
     margin-left: 180px;
-    color: yellow;
+    background-color: yellow;
   }
 }
 abbr[title],

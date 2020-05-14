@@ -48,7 +48,7 @@
 </div>
 <p>
     @Html.ActionLink("Add To Cart", "AddToCart", new { id = Model.Id, Controller = "Cart" }) |
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "UpdateProduct", new { id = Model.Id, Controller = "ProductsAdmin" }) |
     @Html.ActionLink("Back to List", "GetProducts") |
     @Html.ActionLink("Delete Product", "DeleteProduct", new { id = Model.Id, Controller = "ProductsAdmin" })
 </p>

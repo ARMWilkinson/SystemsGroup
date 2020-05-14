@@ -1,14 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(../images/cover4.jpg) no-repeat 0px 0px;
+    background: #404040;
     min-height: 100vh;
     background-size: cover;
     font-family: 'Raleway', sans-serif;
 }
 h1 {
     margin: 0;
-    color: #ffffff;
+    color: #FFFF00;
     text-align: center;
     font-size: 50px;
     font-weight: 500;
@@ -18,7 +18,7 @@ h1 {
 
 h2 {
     margin: 0;
-    color: #fc3955;
+    color: #FFFF00;
     font-size: 25px;
     font-weight: 400;
     text-align: center;
