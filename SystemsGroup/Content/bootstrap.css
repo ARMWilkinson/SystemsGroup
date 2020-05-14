@@ -10,7 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-    margin: 0;
+    margin: 100px;
 }
 article,
 aside,
@@ -18,7 +18,9 @@ details,
 figcaption,
 figure,
 footer,
-header,
+header{
+    text-align: center;
+}
 hgroup,
 main,
 menu,
@@ -188,6 +190,7 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  background-color: yellow;
 }
 td,
 th {
@@ -255,14 +258,16 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+    background-color: yellow;
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: yellow;
   }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    border-color: transparent;
   }
 }
 @font-face {
@@ -1087,7 +1092,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333333;
+    color: black;
     background-color: #434343;
 }
 input,
@@ -1146,7 +1151,7 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eeeeee;
@@ -1443,16 +1448,20 @@ ol ol {
 dl {
   margin-top: 0;
   margin-bottom: 20px;
+  background-color: yellow;
 }
 dt,
 dd {
   line-height: 1.42857143;
+  color: yellow;
 }
 dt {
   font-weight: 700;
+  background-color: yellow;
 }
 dd {
   margin-left: 0;
+  background-color: yellow;
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -1463,9 +1472,11 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    background-color: yellow;
   }
   .dl-horizontal dd {
     margin-left: 180px;
+    background-color: yellow;
   }
 }
 abbr[title],
@@ -2351,7 +2362,7 @@ pre code {
   }
 }
 table {
-  background-color: transparent;
+  background-color: yellow;
 }
 table col[class*="col-"] {
   position: static;
@@ -4352,7 +4363,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-brand {
-    background-image:
   float: left;
   height: 50px;
   padding: 15px 15px;

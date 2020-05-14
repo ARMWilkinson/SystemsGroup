@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Spot.Data;
+using SystemsGroup.Controllers;
 
 namespace SystemsGroup.Models
 {
@@ -19,15 +19,29 @@ namespace SystemsGroup.Models
         }
     }
 
-    public class SpotContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public SpotContext()
+        public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-           
         }
 
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+
+        public DbSet <CartController> cartControllers { get; set; }
+
         
+        public class RoleModel
+        {
+            public string Role { get; set; }
+        }
+
+
+
+
 
     }
 

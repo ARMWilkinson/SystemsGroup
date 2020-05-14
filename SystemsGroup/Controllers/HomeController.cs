@@ -23,8 +23,6 @@ namespace SystemsGroup.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
@@ -34,5 +32,6 @@ namespace SystemsGroup.Controllers
 
             return View();
         }
+       
     }
 }

@@ -1,0 +1,60 @@
+﻿@model Spot.Data.Customer
+
+@{
+    ViewBag.Title = "GetCustomer";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+<h2>GetCustomer</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdateCustomer", new { id = Model.Id, Controller = "CustomersAdmin" }) |
+    @Html.ActionLink("Back to List", "GetCustomers")
+</p>

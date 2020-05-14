@@ -56,7 +56,9 @@
     <Compile Include="Customer.cs">
       <DependentUpon>SpotModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="IDAO\ICustomerDAO.cs" />
     <Compile Include="IDAO\IProductsDAO.cs" />
     <Compile Include="Models\CartProduct.cs" />
     <Compile Include="Products.cs">
