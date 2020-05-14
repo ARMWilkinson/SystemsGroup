@@ -33,6 +33,9 @@ namespace SystemsGroup.Controllers
             Customer customer = _service.GetCustomer(id);
             return View("GetCustomer", customer);
         }
+
+    
+
         // GET: Customers
         public ActionResult Index()
         {
