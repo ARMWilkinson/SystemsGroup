@@ -10,7 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-    margin: 60px;
+    margin: 100px;
 }
 article,
 aside,
@@ -1448,7 +1448,7 @@ ol ol {
 dl {
   margin-top: 0;
   margin-bottom: 20px;
-  color: yellow;
+  background-color: yellow;
 }
 dt,
 dd {
@@ -1457,11 +1457,11 @@ dd {
 }
 dt {
   font-weight: 700;
-  color: yellow;
+  background-color: yellow;
 }
 dd {
   margin-left: 0;
-  color: yellow;
+  background-color: yellow;
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -1472,11 +1472,11 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: yellow;
+    background-color: yellow;
   }
   .dl-horizontal dd {
     margin-left: 180px;
-    color: yellow;
+    background-color: yellow;
   }
 }
 abbr[title],
