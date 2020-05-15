@@ -32,12 +32,17 @@ namespace SystemsGroup.Models
         }
 
         public DbSet <CartController> cartControllers { get; set; }
-      
 
         
+        public class RoleModel
+        {
+            public string Role { get; set; }
+        }
 
 
-        
+
+
+
     }
 
     
