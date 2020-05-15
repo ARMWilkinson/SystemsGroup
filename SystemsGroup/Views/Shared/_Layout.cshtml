@@ -29,7 +29,8 @@
 
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
+                    @if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                    {<li>@Html.ActionLink("Customers", "GetCustomers", new { Controller = "Customers" })</li>}
                     <li>@Html.ActionLink("Products", "GetProducts", new { Controller = "Products" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (Session["LoggedUserID"] != null)
