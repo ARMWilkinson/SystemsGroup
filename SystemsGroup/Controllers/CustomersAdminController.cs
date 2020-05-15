@@ -18,6 +18,8 @@ namespace SystemsGroup.Controllers
         {
             _customersService = new CustomerService();
         }
+
+        //Code for Updating a customer which vailidates the session user is either an Admin or the customer themselves via customer id
         [HttpGet]
         public ActionResult UpdateCustomer(int Id)
         {
@@ -25,7 +27,8 @@ namespace SystemsGroup.Controllers
             {
                 Customer customer = _customersService.GetCustomer(Id);
                 return View(customer);
-            } else
+            } 
+            else
             {
                 return View();
             }
@@ -39,7 +42,8 @@ namespace SystemsGroup.Controllers
                 {
                     _customersService.UpdateCustomer(customer);
                     return RedirectToAction("GetCustomers", "Customers");
-                } else
+                } 
+                else
                 {
                     return View("Index");
                 }
@@ -50,13 +54,15 @@ namespace SystemsGroup.Controllers
             }
         }
 
+        //Code for Deleting a customer which vailidates the session user is either an Admin or the customer themselves via customer id
         [HttpGet]
         public ActionResult DeleteCustomer(int Id)
         {
             if ((Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == Id.ToString()) || (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true))
             {
                 return View(_customersService.GetCustomer(Id));
-            } else
+            } 
+            else
             {
                 return View();
             }
@@ -72,7 +78,8 @@ namespace SystemsGroup.Controllers
                     Customer deleteCustomer = _customersService.GetCustomer(Id);
                     _customersService.DeleteCustomer(deleteCustomer);
                     return RedirectToAction("GetCustomers", "Customers");
-                } else
+                } 
+                else
                 {
                     return View();
                 }

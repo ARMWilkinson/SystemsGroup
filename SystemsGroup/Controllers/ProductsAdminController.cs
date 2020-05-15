@@ -21,7 +21,7 @@ namespace SystemsGroup.Controllers
         }
         [HttpGet]
 
-        //Code for Editing an item
+        //Code for Editing an item only accessible through an admin user session
         public ActionResult UpdateProduct(int Id)
         {
             if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
@@ -52,7 +52,7 @@ namespace SystemsGroup.Controllers
                 return View();
             }
         }
-
+        //Delete a selected product, only available to admin session user
         [HttpGet]
         public ActionResult DeleteProduct(int Id)
         {
@@ -85,7 +85,7 @@ namespace SystemsGroup.Controllers
                 return View("GetProducts", "Products");
             }
         }
-
+        //Add a new product, only accessible through an admin session user
         [HttpGet]
         public ActionResult AddProduct(int Id)
         {
