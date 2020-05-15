@@ -41,15 +41,15 @@ namespace SystemsGroup.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SendEmail(string receiver, string subject, string message)
+        public ActionResult SendEmail(string subject, string message)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var senderEmail = new MailAddress("taiyemoses67@gmail.com", "Spot2Spot");
-                    var receiverEmail = new MailAddress(receiver, "Receiver");
-                    var password = "Kolawole1";
+                    var senderEmail = new MailAddress("example@ail.com", "Spot2Spot"); //Input email to send message from
+                    var receiverEmail = new MailAddress("example@mail.com"); //Input email to send message to
+                    var password = "password"; //Input password for the email to send the message from
                     var sub = subject;
                     var body = message;
                     var smtp = new SmtpClient
