@@ -5,10 +5,11 @@
     <h2>SendEmail</h2>*@
 
 @{
-    ViewBag.Title = "SendEmail";
+    ViewBag.Title = "Contact Us";
 }
 
-<h2> SendEmail </h2>
+<h2> Contact Us </h2>
+<p>We will endeavour to respond as soon as we can.</p>
 <br />
 <br />
 @if (ViewBag.Error != null)
@@ -17,8 +18,6 @@
 }
 <form method = "post"action = "SendEmail" >
    <div class="container">
-    <span class="form-control-static"> Receiver: </span>
-    <input class="form-control" type="text" name="receiver"/> <br/>
     <span class="form-control-static"> Subject: </span> 
     <input class="form-control"type="text" name="subject"/> <br/> 
     <span class="form-control-static"> Message: </span>

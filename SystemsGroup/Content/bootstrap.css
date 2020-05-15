@@ -1453,11 +1453,12 @@ dl {
 dt,
 dd {
   line-height: 1.42857143;
-  color: yellow;
+  color: black;
 }
 dt {
   font-weight: 700;
   background-color: yellow;
+  color: black;
 }
 dd {
   margin-left: 0;
@@ -1473,10 +1474,12 @@ dd {
     text-overflow: ellipsis;
     white-space: nowrap;
     background-color: yellow;
+    color: black;
   }
   .dl-horizontal dd {
     margin-left: 180px;
     background-color: yellow;
+    color: black;
   }
 }
 abbr[title],

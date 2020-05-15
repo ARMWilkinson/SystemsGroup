@@ -30,7 +30,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Products", "GetProducts", new { Controller = "Products" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "SendEmail", new { Controller = "Home" })</li>
                     @if (Session["LoggedUserID"] != null)
                     {
                         <li>@Html.ActionLink("Account", "GetCustomer", new { id = Session["loggedUserID"], Controller = "Customers" })</li>
