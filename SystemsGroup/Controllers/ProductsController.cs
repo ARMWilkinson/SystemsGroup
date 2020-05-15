@@ -20,12 +20,15 @@ namespace SystemsGroup.Controllers
         {
             _service = new ProductsService();
         }
+
+        //Retrieve a list of the products
         public ActionResult GetProducts()
         {
             IList<Products> list = _service.GetProducts();
             return View("GetProducts", list);
         }
 
+        //Retrieve the details of a single product
         public ActionResult GetProduct(int id)
         {
             Products list = _service.GetProduct(id);
