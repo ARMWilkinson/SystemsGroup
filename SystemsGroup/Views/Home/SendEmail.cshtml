@@ -19,13 +19,15 @@
 
 
 @*form that display get email*@
-<form method = "post"action = "SendEmail" >
-   <div class="container">
-    <span class="form-control-static"> Subject: </span> 
-    <input class="form-control"type="text" name="subject"/> <br/> 
-    <span class="form-control-static"> Message: </span>
-    <input class="form-control" type="text"name="message"/> <br/> 
-    <input class="btn btn-primary" type="submit" value="Send"/>
-   </div> 
+<form method="post" action="SendEmail">
+    <div class="container">
+        <span class="form-control-static"> Subject: </span>
+        <input class="form-control" type="text" name="subject" /> <br />
+        <span class="form-control-static"> Message: </span>
+        <input class="form-control" type="text" name="message" /> <br />
+        <input class="btn btn-primary" type="submit" value="Send" />
+    </div>
 </form>
+
+@Html.ActionLink("Back to Home", "Index")
 
