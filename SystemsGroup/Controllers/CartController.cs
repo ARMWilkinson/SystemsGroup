@@ -50,6 +50,37 @@ namespace SystemsGroup.Controllers
             return View("DisplayCart", cart);
         }
 
+        public ActionResult RemoveFromCart(int id)
+        {
+            var cart = (List<CartProduct>)Session["cart"];
+            CartProduct cartItem = cart.Find(obj => obj.Id == id);
+            cart.Remove(cartItem);
+            Session["cart"] = cart;
+            return RedirectToAction("DisplayCart");
+        }
+
+        public ActionResult IncreaseQuantity(int id)
+        {
+            var cart = (List<CartProduct>)Session["cart"];
+            CartProduct cartItem = cart.Find(obj => obj.Id == id);
+            cart.Remove(cartItem);
+            cartItem.Quantity = cartItem.Quantity + 1;
+            cart.Add(cartItem);
+            Session["cart"] = cart;
+            return RedirectToAction("DisplayCart");
+        }
+
+        public ActionResult DecreaseQuantity(int id)
+        {
+            var cart = (List<CartProduct>)Session["cart"];
+            CartProduct cartItem = cart.Find(obj => obj.Id == id);
+            cart.Remove(cartItem);
+            cartItem.Quantity = cartItem.Quantity - 1;
+            cart.Add(cartItem);
+            Session["cart"] = cart;
+            return RedirectToAction("DisplayCart");
+        }
+
         // GET: Cart
         public ActionResult Index()
         {

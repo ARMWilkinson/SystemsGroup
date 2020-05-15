@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Spot.Data;
+using System.Net;
+using System.Net.Mail;
+using SystemsGroup.Models;
+using System.Threading.Tasks;
 
 namespace SystemsGroup.Controllers
 {
@@ -32,6 +36,13 @@ namespace SystemsGroup.Controllers
 
             return View();
         }
-       
+
+        
+
+        public ActionResult Sent()
+        {
+            return View();
+        }
+
     }
 }

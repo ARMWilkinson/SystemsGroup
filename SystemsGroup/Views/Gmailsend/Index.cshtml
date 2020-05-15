@@ -1,0 +1,32 @@
+﻿@model SystemsGroup.Models.Email
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<center>
+    <h2>Contact Us</h2>
+    <hr/>
+    @using (Html.BeginForm("Index","Gmailsend", FormMethod.Post, new { enctype="multipart/form-data"}))
+    {
+<table border="1">
+    <tr>
+        <td>To</td>
+        <td>@Html.TextBoxFor(model => model.to)</td>
+    </tr>
+    <tr>
+        <td>Subject</td>
+        <td>@Html.TextBoxFor(model => model.subject)</td>
+    </tr>
+    <tr>
+        <td>Body</td>
+        <td>@Html.TextAreaFor(model => model.body, new { rows = "13", cols = "25" })</td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Send Mail" /></td>
+    </tr>
+</table>
+    <h1>@ViewBag.Message</h1>
+    }
+</center>
+

@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.PartNumber)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Remove", "RemoveFromCart", new { id = item.Id, Controller = "Cart" }) |
+            @Html.ActionLink("Increase", "IncreaseQuantity", new { id = item.Id, Controller = "Cart" }) |
+            @Html.ActionLink("Decrease", "DecreaseQuantity", new { id = item.Id, Controller = "Cart" }) |
         </td>
     </tr>
 }

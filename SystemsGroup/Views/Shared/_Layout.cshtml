@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/fontawesome-all.css" rel="stylesheet"/>
     <link href="~/Content/style.css" rel="stylesheet"/>
 
 </head>
@@ -21,7 +20,7 @@
                 </button>
                 <a class="navbar-brand" href="#">
                     <a href="~/Home/Index/">
-                        <img src="~/img/s2syellow.png" alt="" style="width:60px;height:40px;">
+                        <img src="~/images/s2syellow.png" alt="" style="width:60px;height:40px;">
                     </a>
                 </a>
 </div>
@@ -30,7 +29,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Products", "GetProducts", new { Controller = "Products" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Index", new { Controller = "Gmailsend" })</li>
                     @if (Session["LoggedUserID"] != null)
                     {
                         <li>@Html.ActionLink("Account", "GetCustomer", new { id = Session["loggedUserID"], Controller = "Customers" })</li>
