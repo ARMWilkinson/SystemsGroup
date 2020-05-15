@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,6 +216,9 @@
     <Content Include="images\s2syellow.png" />
     <Content Include="images\s2syellowbigdot.png" />
     <Content Include="images\s2syellowbigdotinvert.png" />
+    <Content Include="images\stock_one.jpg" />
+    <Content Include="images\stock_three.jpg" />
+    <Content Include="images\stock_two.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fa-brands-400.eot" />
@@ -291,6 +295,7 @@
     <Content Include="Views\Customers\GetCustomer.cshtml" />
     <Content Include="Views\CustomersAdmin\UpdateCustomer.cshtml" />
     <Content Include="Views\CustomersAdmin\DeleteCustomer.cshtml" />
+    <Content Include="Views\Home\SendEmail.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
