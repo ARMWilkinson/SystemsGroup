@@ -1448,20 +1448,21 @@ ol ol {
 dl {
   margin-top: 0;
   margin-bottom: 20px;
-  background-color: yellow;
+  background-color: black;
 }
 dt,
 dd {
   line-height: 1.42857143;
-  color: yellow;
+  color: black;
+  background-color: black;
 }
 dt {
   font-weight: 700;
-  background-color: yellow;
+  color: black;
 }
 dd {
   margin-left: 0;
-  background-color: yellow;
+  color: black;
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -1472,11 +1473,11 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    background-color: black;
+    color: black;
   }
   .dl-horizontal dd {
     margin-left: 180px;
-    background-color: black;
+    color: black;
   }
 }
 abbr[title],
