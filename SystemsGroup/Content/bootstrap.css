@@ -190,7 +190,7 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: yellow;
+  background-color: black;
 }
 td,
 th {
@@ -1472,11 +1472,11 @@ dd {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    background-color: yellow;
+    background-color: black;
   }
   .dl-horizontal dd {
     margin-left: 180px;
-    background-color: yellow;
+    background-color: black;
   }
 }
 abbr[title],
