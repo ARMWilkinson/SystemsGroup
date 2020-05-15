@@ -21,17 +21,28 @@ namespace SystemsGroup.Controllers
         [HttpGet]
         public ActionResult UpdateCustomer(int Id)
         {
-            Customer customer = _customersService.GetCustomer(Id);
-            return View(customer);
+            if ((Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == Id.ToString()) || (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true))
+            {
+                Customer customer = _customersService.GetCustomer(Id);
+                return View(customer);
+            } else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult UpdateCustomer(int Id, Customer customer)
         {
             try
             {
-                _customersService.UpdateCustomer(customer);
-
-                return RedirectToAction("GetCustomers", "Customers");
+                if ((Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == Id.ToString()) || (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true))
+                {
+                    _customersService.UpdateCustomer(customer);
+                    return RedirectToAction("GetCustomers", "Customers");
+                } else
+                {
+                    return View("Index");
+                }
             }
             catch
             {
@@ -42,7 +53,13 @@ namespace SystemsGroup.Controllers
         [HttpGet]
         public ActionResult DeleteCustomer(int Id)
         {
-            return View(_customersService.GetCustomer(Id));
+            if ((Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == Id.ToString()) || (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true))
+            {
+                return View(_customersService.GetCustomer(Id));
+            } else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
@@ -50,9 +67,15 @@ namespace SystemsGroup.Controllers
         {
             try
             {
-                Customer deleteCustomer = _customersService.GetCustomer(Id);
-                _customersService.DeleteCustomer(deleteCustomer);
-                return RedirectToAction("GetCustomers", "Customers");
+                if ((Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == Id.ToString()) || (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true))
+                {
+                    Customer deleteCustomer = _customersService.GetCustomer(Id);
+                    _customersService.DeleteCustomer(deleteCustomer);
+                    return RedirectToAction("GetCustomers", "Customers");
+                } else
+                {
+                    return View();
+                }
             }
             catch
             {

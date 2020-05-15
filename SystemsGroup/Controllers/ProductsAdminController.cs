@@ -20,30 +20,49 @@ namespace SystemsGroup.Controllers
             _productsService = new ProductsService();
         }
         [HttpGet]
+
+        //Code for Editing an item
         public ActionResult UpdateProduct(int Id)
         {
-            Products product = _productsService.GetProduct(Id);
-            return View(product);
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                Products product = _productsService.GetProduct(Id);
+                return View(product);
+            } else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult UpdateProduct(int Id, Products product)
         {
             try
             {
-                _productsService.UpdateProduct(product);
-
-                return RedirectToAction("GetProducts", "Products");
+                if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {
+                    _productsService.UpdateProduct(product);
+                    return RedirectToAction("GetProducts", "Products");
+                } else
+                {
+                    return View();
+                }
             }
             catch
             {
-                return View("Index");
+                return View();
             }
         }
 
         [HttpGet]
         public ActionResult DeleteProduct(int Id)
         {
-            return View(_productsService.GetProduct(Id));
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                return View(_productsService.GetProduct(Id));
+            } else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
@@ -51,9 +70,15 @@ namespace SystemsGroup.Controllers
         {
             try
             {
-                Products deleteProduct = _productsService.GetProduct(Id);
-                _productsService.DeleteProduct(deleteProduct);
-                return RedirectToAction("GetProducts", "Products");
+                if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {
+                    Products deleteProduct = _productsService.GetProduct(Id);
+                    _productsService.DeleteProduct(deleteProduct);
+                    return RedirectToAction("GetProducts", "Products");
+                } else
+                {
+                    return View();
+                }
             }
             catch
             {
@@ -64,7 +89,13 @@ namespace SystemsGroup.Controllers
         [HttpGet]
         public ActionResult AddProduct(int Id)
         {
-            return View(_productsService.GetProduct(Id));
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                return View(_productsService.GetProduct(Id));
+            } else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
@@ -72,8 +103,14 @@ namespace SystemsGroup.Controllers
         {
             try
             {
-                _productsService.AddProduct(product);
-                return RedirectToAction("GetProducts", "Products");
+                if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {
+                    _productsService.AddProduct(product);
+                    return RedirectToAction("GetProducts", "Products");
+                } else
+                {
+                    return View();
+                }
             }
             catch
             {
