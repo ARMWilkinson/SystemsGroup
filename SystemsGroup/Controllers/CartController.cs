@@ -19,16 +19,24 @@ namespace SystemsGroup.Controllers
         public List<CartProduct> cart;
         private Spot.Services.IService.IProductsService _productService;
 
+        //Allows the user to add a product to the cart
         public ActionResult AddToCart(int id)
         {
+            //Create the cart item object
             CartProduct cartItem = new CartProduct();
+
+            //Get the products object
             _productService = new ProductsService();
             Products products = _productService.GetProduct(id);
+
+            //Assign the values of the product to the cart item and give it a quantity of 1
             cartItem.Quantity = 1;
             cartItem.Id = products.Id;
             cartItem.Name = products.Name;
             cartItem.PartNumber = products.PartNumber;
             cartItem.Price = products.Price;
+
+            //Add the product to the cart
             if (Session["cart"] == null)
             {
                 List<CartProduct> cart = new List<CartProduct>();
@@ -44,12 +52,14 @@ namespace SystemsGroup.Controllers
             return RedirectToAction("DisplayCart");
         }
 
+        //Displays the cart
         public ActionResult DisplayCart()
         {
             var cart = (List<CartProduct>)Session["cart"];
             return View("DisplayCart", cart);
         }
 
+        //Removes an item from the cart
         public ActionResult RemoveFromCart(int id)
         {
             var cart = (List<CartProduct>)Session["cart"];
@@ -59,6 +69,7 @@ namespace SystemsGroup.Controllers
             return RedirectToAction("DisplayCart");
         }
 
+        //Increases the quantity of an item in the cart by 1
         public ActionResult IncreaseQuantity(int id)
         {
             var cart = (List<CartProduct>)Session["cart"];
@@ -70,6 +81,7 @@ namespace SystemsGroup.Controllers
             return RedirectToAction("DisplayCart");
         }
 
+        //Decreases the quantity of an item in the cart by 1
         public ActionResult DecreaseQuantity(int id)
         {
             var cart = (List<CartProduct>)Session["cart"];
