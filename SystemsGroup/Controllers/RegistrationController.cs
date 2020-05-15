@@ -15,8 +15,9 @@ namespace SystemsGroup.Controllers
     public class RegistrationController : Controller
     {
         private SpotContext db = new SpotContext();
+        
 
-        // GET: Registration
+        //Register as a new customer through the databse and save. Take new user to login
         public ActionResult Register()
         {
             return View();
@@ -30,111 +31,7 @@ namespace SystemsGroup.Controllers
                 db.Customer.Add(obj);
                 db.SaveChanges();
             }
-            return View(obj);
-        }
-
-            // GET: Registration/Details/5
-            public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Customer customer = db.Customer.Find(id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customer);
-        }
-
-        // GET: Registration/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Registration/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id")] Customer customer)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Customer.Add(customer);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(customer);
-        }
-
-        // GET: Registration/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Customer customer = db.Customer.Find(id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customer);
-        }
-
-        // POST: Registration/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id")] Customer customer)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(customer).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(customer);
-        }
-
-        // GET: Registration/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Customer customer = db.Customer.Find(id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customer);
-        }
-
-        // POST: Registration/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Customer customer = db.Customer.Find(id);
-            db.Customer.Remove(customer);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            return View("Login");
         }
 
         public ActionResult Login()
@@ -142,13 +39,12 @@ namespace SystemsGroup.Controllers
             return View();
         }
 
-
+        //login function that uses the database to check email and password are correct. Checks whether the session user is admin or not and redirects to custom welcome page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Customer customer)
         {
-            // this action is for handle post (login)
-            if (ModelState.IsValid) // this is check validity
+            if (ModelState.IsValid)
             {
                 using (SpotContext dc = new SpotContext())
                 {
@@ -164,6 +60,8 @@ namespace SystemsGroup.Controllers
             }
             return View(customer);
         }
+
+        //Custom login View
         public ActionResult Welcome()
         {
             if (Session["LoggedUserID"] != null)
@@ -175,7 +73,7 @@ namespace SystemsGroup.Controllers
                 return RedirectToAction("Index");
             }
         }
-
+        //Logs out users and admin removing privileges to view pages they might have had if they were logged in
         public ActionResult Logout()
         {
             Session["loggedUserID"] = null;

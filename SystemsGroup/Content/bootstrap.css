@@ -1446,23 +1446,29 @@ ol ol {
   padding-left: 5px;
 }
 dl {
-  margin-top: 0;
-  margin-bottom: 20px;
-  background-color: black;
+    padding: 0.5em;
+    background-color:yellow;
 }
-dt,
-dd {
-  line-height: 1.42857143;
-  color: black;
-  background-color: black;
-}
+
 dt {
-  font-weight: 700;
-  color: black;
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    background-color: yellow;
+    color: black;
 }
+
+    dt::after {
+        content: ":";
+    }
+
 dd {
-  margin-left: 0;
-  color: black;
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0;
+    background-color: yellow;
+}
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -3176,7 +3182,7 @@ fieldset[disabled] a.btn {
 .btn-default {
     color: #FFFF00;
     background-color: #282828;
-    border-color: #404040;
+    border-color: black;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -3227,9 +3233,9 @@ fieldset[disabled] .btn-default.focus {
   background-color: #333;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  color: yellow;
+  background-color: black;
+  border-color: black;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -3238,15 +3244,15 @@ fieldset[disabled] .btn-default.focus {
   border-color: #122b40;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  color: black;
+  background-color: yellow;
+  border-color: yellow;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
+  background-color: black;
   background-image: none;
   border-color: #204d74;
 }
