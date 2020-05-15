@@ -35,11 +35,15 @@ namespace SystemsGroup.Controllers
             return View();
         }
 
-
+        // mehod for for send Email that return a  view
         public ActionResult SendEmail()
         {
             return View();
         }
+
+        ///  add another action method with the same name and Httppost request as following
+        ///  this connect send from a specified email, 
+
         [HttpPost]
         public ActionResult SendEmail(string subject, string message)
         {
@@ -50,8 +54,8 @@ namespace SystemsGroup.Controllers
                     var senderEmail = new MailAddress("example@ail.com", "Spot2Spot"); //Input email to send message from
                     var receiverEmail = new MailAddress("example@mail.com"); //Input email to send message to
                     var password = "password"; //Input password for the email to send the message from
-                    var sub = subject;
-                    var body = message;
+                    var sub = subject; // email subject
+                    var body = message; //
                     var smtp = new SmtpClient
                     {
                         Host = "smtp.gmail.com",
