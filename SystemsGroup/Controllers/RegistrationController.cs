@@ -156,6 +156,7 @@ namespace SystemsGroup.Controllers
                     if (v != null)
                     {
                         Session["LoggedUserID"] = v.Id.ToString();
+                        Session["isAdmin"] = (v.isAdmin != null && v.isAdmin == true) ? true : false;
                         Session["LoggedUserFullname"] = v.EmailAddress.ToString();
                         return RedirectToAction("Welcome");
                     }
@@ -179,6 +180,7 @@ namespace SystemsGroup.Controllers
         {
             Session["loggedUserID"] = null;
             Session["loggedUserFullName"] = null;
+            Session["isAdmin"] = null;
             return RedirectToAction("Index", "Home");
         }
     }

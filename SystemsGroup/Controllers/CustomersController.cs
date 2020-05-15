@@ -24,34 +24,50 @@ namespace SystemsGroup.Controllers
 
         public ActionResult GetCustomers()
         {
-            IList<Customer> list = _service.GetCustomers();
-            return View("GetCustomers", list);
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                IList<Customer> list = _service.GetCustomers();
+                return View("GetCustomers", list);
+            } else
+            {
+                return View("../Home/Index");
+            }
         }
 
         public ActionResult GetCustomer(int id)
         {
-            Customer customer = _service.GetCustomer(id);
-            return View("GetCustomer", customer);
-        }
-
-    
-
-        // GET: Customers
-        public ActionResult Index()
-        {
-            return View();
+            if ((Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == id.ToString()) || (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true))
+            {
+                Customer customer = _service.GetCustomer(id);
+                return View("GetCustomer", customer);
+            } else
+            {
+                return View("../Home/Index");
+            }
         }
 
         // GET: Customers/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (Session["LoggedUserID"] != null && Session["LoggedUserID"].ToString() == id.ToString())
+            {
+                return View();
+            } else
+            {
+                return View("../Home/Index");
+            }
         }
 
         // GET: Customers/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                return View();
+            } else
+            {
+                return View("../Home/Index");
+            }
         }
 
         // POST: Customers/Create
@@ -61,19 +77,30 @@ namespace SystemsGroup.Controllers
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {
+                    return RedirectToAction("Index");
+                } else
+                {
+                    return View("../Home/Index");
+                }
             }
             catch
             {
-                return View();
+                return View("../Home/Index");
             }
         }
 
         // GET: Customers/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                return View();
+            } else
+            {
+                return View("../Home/Index");
+            }
         }
 
         // POST: Customers/Edit/5
@@ -83,8 +110,13 @@ namespace SystemsGroup.Controllers
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {
+                    return RedirectToAction("Index");
+                } else
+                {
+                    return View("../Home/Index");
+                }
             }
             catch
             {
@@ -95,7 +127,13 @@ namespace SystemsGroup.Controllers
         // GET: Customers/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+            {
+                return View();
+            } else
+            {
+                return View("../Home/Index");
+            }
         }
 
         // POST: Customers/Delete/5
@@ -105,12 +143,17 @@ namespace SystemsGroup.Controllers
             try
             {
                 // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {
+                    return RedirectToAction("Index");
+                } else
+                {
+                    return View("../Home/Index");
+                }
             }
             catch
             {
-                return View();
+                return View("../Home/Index");
             }
         }
     }

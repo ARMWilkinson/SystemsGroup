@@ -51,10 +51,13 @@
             </td>
             <td>
                 @Html.ActionLink("Add To Cart", "AddToCart", new { id = item.Id, Controller = "Cart" }) |
-                @Html.ActionLink("Edit", "UpdateProduct", new { id = item.Id, Controller = "ProductsAdmin" }) |
+                @if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {@Html.ActionLink("Edit", "UpdateProduct", new { id = item.Id, Controller = "ProductsAdmin" })} |
                 @Html.ActionLink("Details", "GetProduct", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "DeleteProduct", new { id = item.Id, Controller = "ProductsAdmin" }) |
-                @Html.ActionLink("Create New Product", "AddProduct", new { id = item.Id, Controller = "ProductsAdmin" })
+                @if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {@Html.ActionLink("Delete", "DeleteProduct", new { id = item.Id, Controller = "ProductsAdmin" })} |
+                @if (Session["isAdmin"] != null && bool.Parse(Session["isAdmin"].ToString()) == true)
+                {@Html.ActionLink("Create New Product", "AddProduct", new { id = item.Id, Controller = "ProductsAdmin" })}
             </td>
         </tr>
     }
